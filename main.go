@@ -37,7 +37,7 @@ func main() {
 	}
 }
 
-func compressString(raw string) string {
+func CompressString(raw string) string {
 	var buff bytes.Buffer
 	gz := gzip.NewWriter(&buff)
 
@@ -53,7 +53,7 @@ func compressString(raw string) string {
 	return base64.StdEncoding.EncodeToString(buff.Bytes())
 }
 
-func decompressString(raw string) string {
+func DecompressString(raw string) string {
 	raw = strings.TrimSpace(raw)
 
 	zippedStr, err := base64.StdEncoding.DecodeString(raw)
